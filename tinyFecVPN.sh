@@ -43,9 +43,9 @@ install() {
 		echo -e "$red 下载 tinyFecVPN 失败！$none" && exit 1
 	fi
 	tar zxf /tmp/tinyFecVPN.tar.gz -C /tmp/tinyFecVPN
-	cp -f /tmp/tinyFecVPN/$tinyvpn /usr/local/bin/tinyvpn
-	chmod +x /usr/local/bin/tinyvpn
-	if [[ -f /usr/local/bin/tinyvpn ]]; then
+	cp -f /tmp/tinyFecVPN/$tinyvpn /usr/bin/tinyvpn
+	chmod +x /usr/bin/tinyvpn
+	if [[ -f /usr/bin/tinyvpn ]]; then
 		clear
 		echo -e " 
 		$green tinyFecVPN 安装完成...$none
@@ -69,10 +69,10 @@ install() {
 	rm -rf /tmp/tinyFecVPN.tar.gz
 }
 unistall() {
-	if [[ -f /usr/local/bin/tinyvpn ]]; then
+	if [[ -f /usr/bin/tinyvpn ]]; then
 		tinyFecVPN_pid=$(pgrep "tinyvpn")
 		[ $tinyFecVPN_pid ] && kill -9 $tinyFecVPN_pid >/dev/null 2>&1
-		rm -rf /usr/local/bin/tinyvpn
+		rm -rf /usr/bin/tinyvpn
 		echo -e " \n$green卸载完成...$none\n" && exit 1
 	else
 		echo -e " \n$red大胸弟...你貌似毛有安装 tinyFecVPN ....卸载个鸡鸡哦...$none\n" && exit 1
