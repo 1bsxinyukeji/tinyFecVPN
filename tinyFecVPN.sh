@@ -68,7 +68,7 @@ install() {
 	rm -rf /tmp/tinyFecVPN
 	rm -rf /tmp/tinyFecVPN.tar.gz
 }
-unistall() {
+uninstall() {
 	if [[ -f /usr/bin/tinyvpn ]]; then
 		tinyFecVPN_pid=$(pgrep "tinyvpn")
 		[ $tinyFecVPN_pid ] && kill -9 $tinyFecVPN_pid >/dev/null 2>&1
@@ -100,7 +100,7 @@ while :; do
 		break
 		;;
 	2)
-		unistall
+		uninstall
 		break
 		;;
 	*)
